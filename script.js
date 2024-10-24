@@ -29,17 +29,26 @@ console.log(`1번 문제 정답: ${subject.kor},${subject.math},${subject.eng},$
     아래 콘솔에서 scores를 출력하세요.
 */
 
-student.subject.push('85')
-console.log(`2번 문제 정답: ${student.subject}`)
+subject.push(85)
+console.log(`2번 문제 정답: ${subject}`)
+
 
 /*
     3. 1번에서 구한 scores를 매개변수로 받아 소수점을 모두 없앤 평균 점수 구하는 함수를 작성하고, 
     함수를 실행해 아래 콘솔에 출력하세요.(비익명, 익명, 화살표 함수 상관 없음)
 */
+  function avg(...scores) {
+   let output = 0
+
+   for (const score of scores) {
+     output += score
+      }
+  return (output / scores.length).toFixed(0)
+     }
 
 
 
-console.log(`3번 문제 정답: ${}점`)
+console.log(`3번 문제 정답: ${avg(...scores)}점`)
 
 /*
     4. 3번에서 구한 평균점수를 student 객체에 'key는 avg, 값은 3번에서 구한 평균점수'로 저장하고,
@@ -47,9 +56,9 @@ console.log(`3번 문제 정답: ${}점`)
         *콘솔에 출력하기 위해선 객체를 string형으로 출력하는 함수를 이용하셔야 합니다. 
 */
 
+ student.key = 79
 
-
-console.log(`4번 문제 정답: ${}`)
+console.log(`4번 문제 정답: ${JSON.stringify(student)}`)
 
 /*
     5. student 객체안의 subject 객체에 'key는 kor_history, 값은 85'로 저장하고,
