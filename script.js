@@ -65,10 +65,11 @@ console.log(`4번 문제 정답: ${JSON.stringify(student)}`)
        student 객체를 아래 콘솔에 출력하세요.
         *콘솔에 출력하기 위해선 객체를 string형으로 출력하는 함수를 이용하셔야 합니다. 
 */
+subject.push= 'kor_history'
+subject.kor_history=85
 
 
-
-console.log(`5번 문제 정답: ${}`)
+console.log(`5번 문제 정답: ${JSON.stringify(student)}`)
 
 /*
     6. 먼저 3번에서 구한 평균점수를 이용해 학점을 구하는 함수를 작성하세요.
@@ -86,8 +87,13 @@ console.log(`5번 문제 정답: ${}`)
         *콘솔에 출력하기 위해선 객체를 string형으로 출력하는 함수를 이용하셔야 합니다. 
 */
 
+student.avg = 79
+delete student.key
+student.push = 'grade'
+student.grade = "c"
 
-console.log(`6번 문제 정답: ${}`)
+
+console.log(`6번 문제 정답: ${JSON.stringify(student)}`)
 
 /*  7. student객체의 김라라 학생의 정보를 이용해 학생관리 시스템의 리스트에
     김라라 학생의 정보를 출력하세요.      
