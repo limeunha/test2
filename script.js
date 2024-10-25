@@ -103,15 +103,25 @@ console.log(`6번 문제 정답: ${JSON.stringify(student)}`)
 const tbody = document.querySelector('.board_list tbody')
 const temp = document.createElement('tr')
 
-temp.innerHTML = ``
+temp.innerHTML = `
+                <tr>
+                  <td>6</td>
+                  <td class="title"><a href="./#">${student.name}</a></td>
+                  <td>${student.grade}</td>
+                  <td>${student.reg_date}</td>
+                  <td>0</td>
+               </tr>
+`
+tbody.appendChild(temp)
 
 /*
     8. student 객체에서 전화번호를 출력하여 '-'(대시)를 제거하고 번호만 출력하는 형태로 만들고,
     아래 콘솔에 출력하세요.
 */
 
+const resulta = student.phone.split('-').join('')
 
-console.log(`8번 문제 정답: ${}`)
+console.log(`8번 문제 정답: ${resulta}`)
 
 /*
     9. student 객체에서 날짜(reg_date)를 출력하여 Date함수 형태로 만들고, 
