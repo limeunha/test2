@@ -18,19 +18,19 @@ const student = {
 */
 
 const subject = student.subject
-const scores = [subject.kor]
+const scores = [subject.kor, subject.math, subject.eng, subject.science]
 
 
 
-console.log(`1번 문제 정답: ${subject.kor},${subject.math},${subject.eng},${subject.science}`)
+console.log(`1번 문제 정답: ${scores}`)
 
 /*
     2. scores 변수에 저장되 있는 배열의 맨끝에 85점을 추가하고, 
     아래 콘솔에서 scores를 출력하세요.
 */
 
-subject.push(85)
-console.log(`2번 문제 정답: ${subject}`)
+scores.push(85)
+console.log(`2번 문제 정답: ${scores}`)
 
 
 /*
@@ -129,8 +129,11 @@ console.log(`8번 문제 정답: ${resulta}`)
     구한 후 결과를 아래 콘솔에 출력하세요.
 */
 
+const reg_date = new Date(student.reg_date)
+reg_date.setDate(reg_date.getDate()+20)
 
-console.log(`9번 문제 정답: ${}`)
+
+console.log(`9번 문제 정답: ${reg_date.toLocaleDateString()}`)
 
 
 /*
@@ -178,23 +181,22 @@ const employees = [
       name: '이신',
       addr: '인천시 남동구 남동로 111',
    },
+   
 ]
 
 console.log('========== 10번 문제 출력 결과물 ==========')
 
-const employeesaddrs = [
-'서울시 종로구 계동길 555', '인천시 서구 검단로 111', '서울시 강서구 공항로 222', '용인시 수지구 수지로 333', '서울시 용산구 한강대로 555', '수원시 장안구 장안로 222', '서울시 강남구 선릉로 111', '군포시 산본동 산본로 999', '인천시 남동구 남동로 111']
-
-const result = employeesaddrs.filter((addr) => {
-   if (addr.indexOf('서울') === -1) {
-      console.log('서울에 살지 않습니다.')
-   } else { 
+ 
+const resulte = employees.filter((employee) => {
+   if (employee.addr.includes('서울')) {
       console.log('서울에 삽니다.')
+   } else { 
+      console.log('서울에 살지 않습니다.')
    }
  })
 
 
-console.log(`10번 문제 정답: ${}`)
+console.log(`10번 문제 정답: ${resulte}`)
 
 /*
     11. employees 배열은 직원들의 정보를 객체로 가지고 있습니다.
@@ -202,5 +204,11 @@ console.log(`10번 문제 정답: ${}`)
        employees 배열을 아래 콘솔에 출력하세요.(map 사용)
 */
 
- employees.dept = '개발부'
-console.log(`11번 문제 정답: ${employees}`)
+
+
+employees.forEach(employees =>{
+   employees.dept = '개발부'
+})
+
+ 
+console.log(`11번 문제 정답: ${JSON.stringify(employees)}`)
